@@ -1,53 +1,12 @@
 <script setup>
-import Overview from '@/assets/svg/chart-pie.svg';
-import DocumentReport from '@/assets/svg/document-report.svg';
-import ShoppingBag from '@/assets/svg/shopping-bag.svg';
-import InboxIn from '@/assets/svg/inbox-in.svg'
-import LockClosed from '@/assets/svg/lock-closed.svg'
-import ClipboardList from '@/assets/svg/clipboard-list.svg'
-import Collection from '@/assets/svg/collection.svg'
-import Support from '@/assets/svg/support.svg'
+import { menuConfiguration } from "@/consts/sidebar/items.js";
 import Adjustments from '@/assets/svg/adjustments.svg'
 import Globe from '@/assets/svg/globe.svg'
 import Cog from '@/assets/svg/cog.svg'
 import SidebarMenuItemComponent from "@/components/layouts/sidebar/menuItem/SidebarMenuItemComponent.vue";
 
 
-const menuConfiguration = [
-  {
-    name: "Overview",
-    class: 'text-blue-600',
-    icon: Overview,
-  },
-  {
-    name: "Pages",
-    icon: DocumentReport,
-  },
-  {
-    name: "Sales",
-    icon: ShoppingBag,
-  },
-  {
-    name: "Messages",
-    icon: InboxIn,
-  },
-  {
-    name: "Authentication",
-    icon: LockClosed,
-  },
-  {
-    name: "Docs",
-    icon: ClipboardList,
-  },
-  {
-    name: "Components",
-    icon: Collection,
-  },
-  {
-    name: "Help",
-    icon: Support,
-  },
-]
+
 
 </script>
 
@@ -55,7 +14,7 @@ const menuConfiguration = [
   <div class="sidebar-container">
     <section class="sidebar-container__main px-3 pt-4">
       <ul>
-        <SidebarMenuItemComponent :menu-configuration="menuConfiguration"/>
+        <SidebarMenuItemComponent v-for="(item, i) in menuConfiguration" :key="i" :item="item"/>
       </ul>
     </section>
     <section class="sidebar-container__additional">
@@ -66,14 +25,14 @@ const menuConfiguration = [
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 .sidebar-container {
-  height: calc(100dvh - 70px);
   width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-right: 1px solid var(--gray-500);
 
   ul {
     display: flex;
@@ -87,6 +46,10 @@ const menuConfiguration = [
     justify-content: center;
     gap: 1.375rem;
     padding-bottom: 1rem;
+  }
+
+  svg {
+    cursor: pointer;
   }
 }
 

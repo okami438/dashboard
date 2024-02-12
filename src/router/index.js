@@ -5,6 +5,11 @@ const routes = [
         path: '/',
         name: 'main',
         component: () => import('@/views/main/DashboardView.vue')
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'not-found',
+        component: () => import('@/views/notFound/NotFoundView.vue')
     }
 ];
 

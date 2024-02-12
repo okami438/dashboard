@@ -1,14 +1,15 @@
 <script setup>
 import Logo from '@/assets/svg/logo.svg'
-import Avatar from '@/assets/svg/avatar.svg'
+import Avatar from '@/assets/svg/user-circle.svg'
 import Bell from '@/assets/svg/bell.svg'
+import InputComponent from "@/components/UI/input/InputComponent.vue";
 </script>
 
 <template>
   <nav class="px-5">
     <div class="left-content">
       <Logo/>
-      <input type="text"/>
+      <InputComponent/>
     </div>
     <div class="right-content">
       <Bell/>
@@ -17,7 +18,7 @@ import Bell from '@/assets/svg/bell.svg'
   </nav>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 nav {
   display: flex;
@@ -25,7 +26,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 70px;
   border-bottom: .5px solid var(--gray-500);
 
   > .left-content {
@@ -42,6 +42,10 @@ nav {
     flex-direction: row;
     align-items: center;
     gap: .75rem;
+  }
+
+  svg {
+    cursor: pointer;
   }
 
 }
