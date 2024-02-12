@@ -1,0 +1,41 @@
+$spacers: (
+        '1': 0.25rem,
+        '2': 0.5rem,
+        '3': 0.75rem,
+        '4': 1rem,
+        '5': 1.25rem,
+        '6': 1.5rem,
+        '7': 1.75rem,
+        '8': 2rem,
+);
+
+$spacer-types: (
+        'mr': 'margin-right',
+        'mb': 'margin-bottom',
+        'ml': 'margin-left',
+        'mt': 'margin-top',
+        'mx': ('margin-right' 'margin-left'),
+        'my': ('margin-top' 'margin-bottom'),
+        'pr': 'padding-right',
+        'pb': 'padding-bottom',
+        'pl': 'padding-left',
+        'pt': 'padding-top',
+        'px': ('padding-right' 'padding-left'),
+        'py': ('padding-top' 'padding-bottom'),
+);
+
+
+@each $spacer_type, $spacer_class in $spacer-types {
+  @each $spacer_key, $spacer_size in $spacers {
+    .#{$spacer_type}-#{$spacer_key} {
+      @if(type-of($spacer_class) == 'list') {
+        @each $class_item in $spacer_class {
+          #{$class_item}: $spacer_size
+        }
+      }
+      @else {
+        #{$spacer_class}: $spacer_size
+      };
+    };
+  }
+}

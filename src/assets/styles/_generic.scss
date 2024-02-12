@@ -1,0 +1,50 @@
+@use './_colors.scss' as colors;
+
+@mixin background-color($color_value) {
+    background-color: $color_value !important;
+}
+
+@mixin border-color($color_value) {
+    border-color: $color_value !important;
+}
+
+@mixin text-color($color_value) {
+    color: $color_value !important;
+    caret-color: $color_value !important;
+}
+
+@mixin color-class($prefix, $type_mixin, $color_name, $color_type, $color_value) {
+    @if($type_mixin == 'text' ) {
+        .#{$prefix}-#{$color_name}-#{$color_type} {
+            @include text-color($color_value);
+        }
+    }
+    @if( $type_mixin == 'background' ) {
+        .#{$prefix}-#{$color_name}-#{$color_type} {
+            @include background-color($color_value);
+        }
+    }
+    @if( $type_mixin == 'border' ) {
+        #{$prefix}-#{$color_name}-#{$color_type} {
+            @include border-color($color_value);
+        }
+    }
+}
+
+@each $color_name, $color_values in colors.$colors {
+    @each $color_type, $color_value in $color_values {
+        @include color-class('text', 'text', $color_name, $color_type, $color_value);
+        @include color-class('bg', 'background', $color_name, $color_type, $color_value);
+        @include color-class('bc', 'border', $color_name, $color_type, $color_value);
+    }
+}
+
+
+:root {
+    @each $color_name, $color_values in colors.$colors {
+        @each $color_type, $color_value in $color_values {
+            --#{$color_name}-#{$color_type}: #{$color_value};
+        }
+    }
+}
+

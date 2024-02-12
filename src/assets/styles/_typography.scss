@@ -1,0 +1,62 @@
+@font-face {
+  font-weight: 300;
+  font-family: Open Sans;
+  src: url("@/assets/fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: Open Sans;
+  src: url("@/assets/fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: Open Sans;
+  src: url("@/assets/fonts/OpenSans-Medium.ttf");
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: Open Sans;
+  src: url("@/assets/fonts/OpenSans-SemiBold.ttf");
+}
+
+
+@font-face {
+  font-weight: 700;
+  font-family: Open Sans;
+  src: url("@/assets/fonts/OpenSans-Bold.ttf");
+}
+
+
+$sizes: (
+        'xs': 12,
+        'sm': 14,
+        'base': 16,
+        'xl': 20,
+        '3xl': 30,
+        '7xl': 72
+);
+
+$weight: (
+        'light': 300,
+        'normal': 400,
+        'medium': 500,
+        'semibold': 600,
+        'bold': 700
+
+);
+
+@each $weight_name, $weight_value in $weight {
+  .font-#{$weight_name} {
+    font-weight: #{$weight_value};
+  }
+}
+
+@each $size_name, $size_value in $sizes {
+  .text-#{$size_name} {
+    font-size: #{$size_value}px;
+  }
+}
+
