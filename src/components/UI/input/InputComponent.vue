@@ -24,16 +24,15 @@ import Search from '@/assets/svg/search.svg'
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    fill: map-get($gray, '500'); /* Цвет иконки поиска */
+    fill: map-get($gray, '500');
   }
 
   .search-input {
-    padding: 5px 0 5px 30px; /* Отступ слева для учёта иконки поиска */
-    width: 100%; /* Ширина инпута */
-    border: 1px solid map-get($gray, '200'); /* Добавляем тонкую серую границу */
+    padding: 5px 0 5px 30px;
+    width: 100%;
+    border: 1px solid map-get($gray, '200');
     border-radius: 12px;
-    background-color: map-get($gray, '100'); /* Добавляем серый цвет фона */
-  }
+    background-color: map-get($gray, '100');
 
 }
 

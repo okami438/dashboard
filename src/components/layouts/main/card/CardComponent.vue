@@ -35,7 +35,6 @@ const props = defineProps(['card', 'name']);
   max-height: 25rem;
   overflow-y: auto;
   background-color: white;
-  //margin: 2rem;
   border-radius: 12px;
   position: relative;
 
@@ -43,7 +42,7 @@ const props = defineProps(['card', 'name']);
     background-color: white;
     padding: 1rem;
     position: sticky;
-    top: 0rem;
+    top: 0;
     z-index: 1;
   }
 

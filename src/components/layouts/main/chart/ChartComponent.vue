@@ -59,12 +59,7 @@ const handleResize = () => {
 
 <style scoped lang="scss">
 .chart {
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
   background-color: white;
-  //height: 24rem;
-  //margin: 0 2rem 0 2rem;
   border-radius: 12px;
   position: relative;
 

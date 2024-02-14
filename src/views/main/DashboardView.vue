@@ -8,20 +8,6 @@ import FooterComponent from "@/components/layouts/footer/FooterComponent.vue";
 </script>
 
 <template>
-<!--  <div class="app-container">-->
-<!--    <header>-->
-<!--      <HeaderComponent :style="{height: '70px'}"/>-->
-<!--    </header>-->
-<!--    <div class="app-container__content">-->
-<!--      <SidebarComponent/>-->
-<!--      <main :style="{ backgroundColor: 'var(&#45;&#45;gray-100)'}">-->
-<!--        <MainComponent :style="{height: 'calc(100lvh - 70px)'}"/>-->
-<!--      </main>-->
-<!--    </div>-->
-<!--    <footer>-->
-<!--      <FooterComponent class="footer"/>-->
-<!--    </footer>-->
-<!--  </div>-->
 <div class="layout-container">
   <header>
     <HeaderComponent :style="{height: '70px'}"/>
@@ -42,26 +28,10 @@ import FooterComponent from "@/components/layouts/footer/FooterComponent.vue";
 
 <style scoped lang="scss">
 
-//.app-container {
-//  display: flex;
-//  flex-direction: column;
-//  height: 100dvh;
-//
-//  &__content {
-//    display: flex;
-//    flex: 1;
-//
-//    > main {
-//      flex: 1;
-//    }
-//
-//  }
-//}
 
 .layout-container {
   display: flex;
   flex-direction: column;
-  //height: 100dvh;
 
   &__main {
 
