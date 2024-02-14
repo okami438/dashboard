@@ -9,31 +9,29 @@ import FooterComponent from "@/components/layouts/footer/FooterComponent.vue";
 </script>
 
 <template>
-  <div class="container">
-    <div class="container__main">
-      <CardComponent :card="data" :name="'Latest customers'"/>
-      <ChartComponent style="flex-grow: 1;"/>
+  <div class="container d-flex">
+    <div class="col-12">
+      <ChartComponent  style=""/>
     </div>
-    <FooterComponent class="footer"/>
+    <div class="col-4">
+      <CardComponent  :card="data" :name="'Latest customers'"/>
+    </div>
+    <div class="col-8">
+      <CardComponent :card="data" :name="'Latest customers'"/>
+    </div>
   </div>
 </template>
 
 <style scoped>
 
 .container {
-  display: flex;
-  flex-direction: column;
-  height: 100lvh;
-}
+  flex-wrap: wrap;
 
-.container__main {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-}
-
-.footer {
-  margin-top: auto;
+  &__main {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
 }
 
 

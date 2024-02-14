@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import {onBeforeUnmount, onMounted, ref} from 'vue';
 import Chart from 'chart.js/auto';
 
 const chartCanvas = ref(null);
@@ -43,8 +43,7 @@ const renderChart = () => {
 };
 
 const handleResize = () => {
-  const containerWidth = chartContainer.value.clientWidth;
-  chartCanvas.value.width = containerWidth;
+  chartCanvas.value.width = chartContainer.value.clientWidth;
   if (chartInstance) {
     chartInstance.resize();
   }
@@ -52,7 +51,7 @@ const handleResize = () => {
 </script>
 
 <template>
-  <div class="chart" ref="chartContainer">
+  <div class="chart card" ref="chartContainer">
     <canvas ref="chartCanvas"></canvas>
   </div>
 </template>
@@ -60,14 +59,12 @@ const handleResize = () => {
 
 <style scoped lang="scss">
 .chart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
   background-color: white;
-  height: 24rem;
-  margin: 2rem;
-  width: 100%;
-  box-shadow: 0px -1px 8px 0px rgba(34, 60, 80, 0.2);
+  //height: 24rem;
+  //margin: 0 2rem 0 2rem;
   border-radius: 12px;
   position: relative;
 

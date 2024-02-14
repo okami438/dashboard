@@ -3,7 +3,7 @@ import Facebook from '@/assets/svg/facebook-f.svg'
 </script>
 
 <template>
-  <div class="card">
+  <div class="footer-container card">
     <span class="text-sm font-light" >2021, Themesberg</span>
     <Facebook/>
   </div>
@@ -11,7 +11,7 @@ import Facebook from '@/assets/svg/facebook-f.svg'
 
 <style scoped>
 
-.card {
+.footer-container {
   display: flex;
   flex-direction: row;
   height: 4rem;
@@ -19,8 +19,7 @@ import Facebook from '@/assets/svg/facebook-f.svg'
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  box-shadow: 0px -1px 8px 0px rgba(34, 60, 80, 0.2);
-  margin: 2rem;
+  margin: 0 1rem 1rem 1rem;
   border-radius: 12px;
   position: relative;
 }

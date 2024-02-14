@@ -26,13 +26,16 @@ import SidebarMenuItemComponent from "@/components/layouts/sidebar/menuItem/Side
 </template>
 
 <style scoped lang="scss">
+@use '@/assets/styles/colors' as *;
+@use 'sass:map';
 
 .sidebar-container {
   width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-right: 1px solid var(--gray-500);
+  border-right: 1px solid map-get($gray, '200');
+  background-color: white;
 
   ul {
     display: flex;

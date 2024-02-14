@@ -1,0 +1,43 @@
+$gutter: 1rem;
+
+$grid-columns: (
+        "col-1": 8.3333%,
+        "col-2": 16.6667%,
+        "col-3": 25%,
+        "col-4": 33.3333%,
+        "col-5": 41.6667%,
+        "col-6": 50%,
+        "col-7": 58.3333%,
+        "col-8": 66.6667%,
+        "col-9": 75%,
+        "col-10": 83.3333%,
+        "col-11": 91.6667%,
+        "col-12": 100%
+) !default;
+
+$display-props: (
+        'hidden': 'none',
+        'block': 'block',
+        'inline': 'inline',
+        'inline-block': 'inline-block',
+        'flex': 'flex',
+        'inline-flex': 'inline-flex'
+) !default;
+
+@mixin style-class($prop, $map) {
+  @each $key, $val in $map {
+    .d-#{$key} {
+      #{$prop}: #{$val} !important;
+    }
+  }
+}
+
+@include style-class('display', $display-props);
+
+@each $col,$width in $grid-columns {
+  .#{$col} {
+    flex: 0 0 auto;
+    padding: $gutter;
+    width: #{$width};
+  }
+}

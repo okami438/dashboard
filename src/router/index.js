@@ -3,7 +3,7 @@ import {createRouter, createWebHistory} from "vue-router";
 const routes = [
     {
         path: '/',
-        name: 'main',
+        name: 'layout',
         component: () => import('@/views/main/DashboardView.vue')
     },
     {

@@ -4,38 +4,38 @@ const props = defineProps(['card', 'name']);
 </script>
 
 <template>
-<form>
-  <header class="text-base font-bold">
-    <span>{{ name }}</span>
-  </header>
-  <div class="item" v-for="(item, i) in card" :key="i" :style="{ borderBottom: i !== card.length - 1 ? '1px solid var(--gray-500)' : 'none' }">
-    <div class="row-container">
-      <div class="row-container__avatar">
-        <component :is="item.icon"/>
+  <div class="card-container card">
+    <header class="text-base font-bold">
+      <span>{{ name }}</span>
+    </header>
+    <div class="item" v-for="(item, i) in card" :key="i" :style="{ borderBottom: i !== card.length - 1 ? '1px solid var(--gray-500)' : 'none' }">
+      <div class="row-container">
+        <div class="row-container__avatar">
+          <component :is="item.icon"/>
+        </div>
+        <div class="row-container__user">
+          <span class="text-sm">{{ item.name }}</span>
+          <span class="text-xs">{{ item.email }}</span>
+        </div>
       </div>
-      <div class="row-container__user">
-        <span class="text-sm">{{ item.name }}</span>
-        <span class="text-xs">{{ item.email }}</span>
+      <div class="row-container__price">
+        <span class="text-sm">{{ item.price }}</span>
       </div>
-    </div>
-    <div class="row-container__price">
-      <span class="text-sm">{{ item.price }}</span>
     </div>
   </div>
-</form>
+
 </template>
 
 <style scoped lang="scss">
-form {
+.card-container {
   display: flex;
   flex-direction: column;
-  width: 22rem;
+  width: 100%;
   height: 24rem;
   max-height: 25rem;
   overflow-y: auto;
   background-color: white;
-  box-shadow: 0px -1px 8px 0px rgba(34, 60, 80, 0.2);
-  margin: 2rem;
+  //margin: 2rem;
   border-radius: 12px;
   position: relative;
 
@@ -43,7 +43,7 @@ form {
     background-color: white;
     padding: 1rem;
     position: sticky;
-    top: 0;
+    top: 0rem;
     z-index: 1;
   }
 

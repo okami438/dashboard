@@ -19,6 +19,8 @@ import InputComponent from "@/components/UI/input/InputComponent.vue";
 </template>
 
 <style scoped lang="scss">
+@use '@/assets/styles/colors' as *;
+@use 'sass:map';
 
 nav {
   display: flex;
@@ -26,7 +28,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-bottom: .5px solid var(--gray-500);
+  border-bottom: .5px solid map-get($gray, '200');
+  background-color: white;
 
   > .left-content {
     display: flex;

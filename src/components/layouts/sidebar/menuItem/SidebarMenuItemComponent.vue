@@ -35,7 +35,7 @@ const handleItemClickWithToggle = (item) => {
     <li class="px-2" @click="handleItemClickWithToggle(item)" >
       <div class="row">
         <component :is="item.icon"/>
-        <span> {{ item.name }} </span>
+        <span class="text-sm"> {{ item.name }} </span>
       </div>
       <div class="icon" v-if="item.children" :class="{ 'rotated': isChevronRotated }">
         <Chevron/>
